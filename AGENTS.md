@@ -2,6 +2,10 @@
 
 SvelteKit 5 application deployed on Cloudflare Workers with Vitest and Playwright testing.
 
+## IMPORTANT
+
+**All code, commits, documentation, and comments must be in English.**
+
 ## Build & Test Commands
 
 **Development:**
@@ -49,7 +53,7 @@ SvelteKit 5 application deployed on Cloudflare Workers with Vitest and Playwrigh
 
 - Strict mode enabled
 - No `any` types - create proper interfaces
-- All files must pass `pnpm check`
+- All files must pass `bun run check`
 - Use `lang="ts"` in Svelte script blocks
 
 ### Svelte 5 Patterns
