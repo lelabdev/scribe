@@ -1,0 +1,1074 @@
+# Skeleton Documentation
+
+## Get Started
+
+# Introduction
+
+Learn more about Skeleton and how it can serve you.
+
+Skeleton provides a uniform design language and structured framework for controlling look and feel of your product and user experience. It serves as an opinionated design system that aims to greatly reduce the amount of time spent managing design elements and patterns, allowing you to more quickly build and manage your frontend interfaces at scale.
+
+<figure className="linker bg-noise">
+  <SkeletonBig className="aspect-square size-48 drop-shadow-md fill-current" />
+</figure>
+
+## In a Nutshell
+
+{
+
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+    <div className="card preset-outlined-surface-200-800 bg-surface-50-950 p-10 space-y-4">
+    	<h3 className="h3">Design System</h3>
+    	<p className="text-surface-800-200">
+    		This aims to augment Tailwind CSS. It provides themes, styled elements and provides opinionated guardrails for integrating your fully
+    		featured design system.
+    	</p>
+    </div>
+    <div className="card preset-outlined-surface-200-800 bg-surface-50-950 p-10 space-y-4">
+    	<h3 className="h3">Components</h3>
+    	<p className="text-surface-800-200">
+    		Turnkey components built atop the foundation of{' '}
+    		<a href="https://zagjs.com/" target="_blank" class="anchor">
+    			Zag.js
+    		</a>
+    		. These automatically adapt to the Skeleton design system out of the box. Currently available for Svelte and React.
+    	</p>
+    </div>
+  </div>
+
+}
+
+## Our Philosophy
+
+{
+
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+    <div className="card preset-outlined-surface-200-800 bg-surface-50-950 p-10 space-y-4">
+    	<h3 className="h3">Framework Agnostic</h3>
+    	<p className="text-surface-800-200">
+    		Skeleton's core features are framework agnostic, only requiring the use of{' '}
+    		<a className="anchor" href="https://tailwindcss.com/" target="_blank" rel="external">
+    			Tailwind CSS
+    		</a>
+    		. This provides full access to all design system features, while enabling you to standardize the design process for your framework of
+    		choice.
+    	</p>
+    </div>
+    <div className="card preset-outlined-surface-200-800 bg-surface-50-950 p-10 space-y-4">
+    	<h3 className="h3">Native-First</h3>
+    	<p className="text-surface-800-200">
+    		We aim to embrace the interface of the web, not replace it. This is why Skeleton defaults to semantic HTML elements and native browser
+    		APIs. Beyond ease of use, we feel this offers a huge advantages to accessibility.
+    	</p>
+    </div>
+    <div className="card preset-outlined-surface-200-800 bg-surface-50-950 p-10 space-y-4">
+    	<h3 className="h3">Simple Standards</h3>
+    	<p className="text-surface-800-200">
+    		We aim to standardize the design process, providing common conventions that are easy to learn and retain, whether you work alone or in
+    		a team environment. Covering common fixtures such as themes, colors, typography, spacing and more.
+    	</p>
+    </div>
+    <div className="card preset-outlined-surface-200-800 bg-surface-50-950 p-10 space-y-4">
+    	<h3 className="h3">Utility-First</h3>
+    	<p className="text-surface-800-200">
+    		Skeleton embraces the{' '}
+    		<a className="anchor" href="https://tailwindcss.com/docs/utility-first" target="_blank" rel="external">
+    			utility-first
+    		</a>{' '}
+    		methodology for styling, supporting all features provided by{' '}
+    		<a className="anchor" href="https://tailwindcss.com/" target="_blank" rel="external">
+    			Tailwind
+    		</a>
+    		, while extending its capabilities in meaningful ways. Providing full support for encapsulated components of the modern web.
+    	</p>
+    </div>
+    <div className="card preset-outlined-surface-200-800 bg-surface-50-950 p-10 space-y-4">
+    	<h3 className="h3">Opt-In by Default</h3>
+    	<p className="text-surface-800-200">
+    		Most features in Skeleton are modular and opt-in by default. Enabling interface features like buttons and typography via dedicated
+    		utility classes. This allows for a simple escape hatch when you need to draw outside the lines and generate custom interfaces.
+    	</p>
+    </div>
+    <div className="card preset-outlined-surface-200-800 bg-surface-50-950 p-10 space-y-4">
+    	<h3 className="h3">Adaptive</h3>
+    	<p className="text-surface-800-200">
+    		Skeleton is intended to adapt to the design and aesthetic of your project, while still providing reasonable defaults. Providing a
+    		powerful{' '}
+    		<a className="anchor" href="https://themes.skeleton.dev/" target="_blank" rel="external">
+    			theme generator
+    		</a>{' '}
+    		for custom themes, while also supplying a curated set of themes for those less design savvy.
+    	</p>
+    </div>
+  </div>
+
+}
+
+## Additional Benefits
+
+{
+
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+    <div className="card preset-outlined-surface-200-800 bg-surface-50-950 p-10 space-y-4">
+    	<h3 className="h3">Open Source</h3>
+    	<p className="text-surface-800-200">
+    		Skeleton is provided as{' '}
+    		<a href="https://github.com/skeletonlabs/skeleton" target="_blank" class="anchor">
+    			free and open-source software (FOSS)
+    		</a>{' '}
+    		under the{' '}
+    		<a href="https://github.com/skeletonlabs/skeleton?tab=MIT-1-ov-file#readme" target="_blank" class="anchor">
+    			MIT License
+    		</a>
+    		.
+    	</p>
+    </div>
+    <div className="card preset-outlined-surface-200-800 bg-surface-50-950 p-10 space-y-4">
+    	<h3 className="h3">The Community</h3>
+    	<p className="text-surface-800-200">
+    		A vast community of users and contributors across{' '}
+    		<a href="https://github.com/skeletonlabs/skeleton" target="_blank" class="anchor">
+    			GitHub
+    		</a>
+    		,{' '}
+    		<a href="https://discord.gg/EXqV7W8MtY" target="_blank" class="anchor">
+    			Discord
+    		</a>
+    		, and{' '}
+    		<a href="https://bsky.app/profile/skeleton.dev" target="_blank" class="anchor">
+    			Bluesky
+    		</a>
+    		.
+    	</p>
+    </div>
+    <div className="card preset-outlined-surface-200-800 bg-surface-50-950 p-10 space-y-4">
+    	<h3 className="h3">Frequent Updates</h3>
+    	<p className="text-surface-800-200">
+    		Skeleton has maintained a frequent release cadence over the years. Just take a look at our{' '}
+    		<a href="https://github.com/skeletonlabs/skeleton/releases" target="_blank" class="anchor">
+    			Releases
+    		</a>
+    		.
+    	</p>
+    </div>
+    <div className="card preset-outlined-surface-200-800 bg-surface-50-950 p-10 space-y-4">
+    	<h3 className="h3">Community Tools</h3>
+    	<p className="text-surface-800-200">
+    		We promote community-based projects that help augment Skeleton and improve your productivity, such as the{' '}
+    		<a href="https://www.etesie.dev/figma" target="_blank" rel="noopener noreferrer" class="anchor">
+    			Figma UI Kit
+    		</a>
+    		.
+    	</p>
+    </div>
+  </div>
+
+}
+
+# Installation
+
+Learn how to install and setup Skeleton for your project.
+
+## Guides
+
+<NavigationGrid filter={(doc) => doc.id.includes('installation/')} class="md:grid-cols-2" />
+
+## Mixing UI Libraries
+
+Skeleton's design system is perfect for complementing headless component libraries, such as [Bits UI](/docs/\[framework]/integrations/bits-ui), [Melt UI](/docs/\[framework]/integrations/melt-ui), [Radix](/docs/\[framework]/integrations/radix-ui), and [Zag.js](https://zagjs.com/). As well as "Tailwind component" libraries such as [Tailwind Plus](https://tailwindcss.com/plus). Supporting any component system that supports Tailwind, but very specifically allows you to insert or substitute Skeleton-provided utility classes.
+
+### Unsupported Libraries
+
+Unfortunately, Skeleton cannot integrate with [Flowbite React](https://flowbite-react.com/), [Flowbite Svelte](https://flowbite-svelte.com/), or [Daisy UI](https://daisyui.com/) at this time. Similar to Skeleton, these libraries make changes to Tailwind that directly overlap with many of our core features, including class names and color values.
+
+# Fundamentals
+
+An introduction to core concepts of Skeleton.
+
+Skeleton is comprised of three pillars - the design system, our extensions to Tailwind, and an optional suite of framework-specific components. Together these form a comprehensive solution for designing and implementing complex web interfaces at scale.
+
+***
+
+## Design System
+
+Explore each pillar of the Skeleton design system. Provided via Skeleton core.
+
+<NavigationGrid filter={(doc) => doc.id.includes('design/')} class="md:grid-cols-2" />
+
+***
+
+## Tailwind Components
+
+Tailwind components that act as primitives for creating complex interfaces. Provided via Skeleton core.
+
+<NavigationGrid filter={(doc) => doc.id.includes('tailwind-components/')} class="md:grid-cols-2" />
+
+***
+
+## Framework Components
+
+Skeleton also offers optional component packages for select component frameworks. Each component automatically adapts to the Skeleton design system. While still allowing a high level of customization.
+
+### Supported Frameworks
+
+| Framework | NPM Package                     | Description                     |
+| --------- | ------------------------------- | ------------------------------- |
+| React     | `@skeletonlabs/skeleton-react`  | Contains all React components.  |
+| Svelte    | `@skeletonlabs/skeleton-svelte` | Contains all Svelte components. |
+
+### Powered by Zag.js
+
+Skeleton's components are built on **Zag.js**, which provides a collection of framework-agnostic UI component patterns to manage logic and state. Zag is actively maintained by industry veterans, such as [Segun Adebayo](https://github.com/segunadebayo) - creator and core maintainer for [Chakra UI](https://www.chakra-ui.com/), [Ark UI](https://ark-ui.com/), and [PandaCSS](https://panda-css.com/).
+
+<iframe class="aspect-video" src="https://www.youtube-nocookie.com/embed/SLPBmP588Hk?si=NJLvt4aMrevTnQbY" title="Skeleton + Zag.js: Building Cross-Framework Components" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen />
+
+<figure class="linker bg-noise">
+  <a class="btn preset-filled" href="https://zagjs.com/" target="_blank">
+    View Zag.js
+  </a>
+</figure>
+
+### Importing Components
+
+You may import components per each Skeleton framework as follows.
+
+```ts
+import { Avatar } from '@skeletonlabs/skeleton-svelte';
+```
+
+This also includes access to component prop types.
+
+```ts
+import type { AvatarRootProps, ... } from '@skeletonlabs/skeleton-svelte';
+```
+
+### Composed Pattern
+
+Skeleton components are granular. This offers direct access to all children within the tree, similar to working with raw HTML. This allows passing in arbitrary props and attributes directly to the template within. Including: `required`, `data-*`, `style`, `class`, and more.
+
+```svelte
+<Avatar>
+	<Avatar.Image src="https://i.pravatar.cc/150?img=48" />
+	<Avatar.Fallback>SK</Avatar.Fallback>
+</Avatar>
+```
+
+### Styling Components
+
+Skeleton components implement a universal convention for accepting CSS utility classes via the `class` attribute. Use this to pass any CSS utility class.
+
+```svelte
+<Avatar class="rounded-2xl">
+	<Avatar.Image src="https://i.pravatar.cc/150?img=48" class="greyscale" />
+	<Avatar.Fallback>SK</Avatar.Fallback>
+</Avatar>
+```
+
+### Extensible Markup
+
+Skeleton components provide a mechanism for overwriting internal HTML with custom markup. Use the `element` prop to provide a custom element, this prop accepts a function which `attributes` are passed into. Then spread the `attributes` to your custom elements. Note that this is an optional and advanced feature aimed at power users, and should not be needed for normal usage.
+
+```svelte
+<Accordion>
+	<Accordion.Item value="item-1">
+		<h3>
+			<Accordion.ItemTrigger>
+				{#snippet element(attributes)}
+					<button {...attributes}>My Own Button</button>
+				{/snippet}
+			</Accordion.ItemTrigger>
+		</h3>
+		<Accordion.ItemContent>Content for Item 1</Accordion.ItemContent>
+	</Accordion.Item>
+</Accordion>
+```
+
+### Custom Animations
+
+Using the extensible markup pattern, you may implement custom animations. We showcase this below with [Svelte Transitions](https://svelte.dev/docs/svelte/transition), but you could also use framework agnostic solutions such as [Motion](https://motion.dev/), [Anime.js](https://animejs.com/), or [Animate.css](https://animate.style/).
+
+```svelte
+<script lang="ts">
+	import { Accordion } from '@skeletonlabs/skeleton-svelte';
+	import { slide } from 'svelte/transition';
+</script>
+
+<Accordion>
+	{#each ['1', '2', '3'] as item (item)}
+		<Accordion.Item value="item-{item}">
+			<h3>
+				<Accordion.ItemTrigger>Item {item}</Accordion.ItemTrigger>
+			</h3>
+			<Accordion.ItemContent>
+				{#snippet element(attributes)}
+					{#if !attributes.hidden}
+						<div {...attributes} transition:slide>Content for item {item}</div>
+					{/if}
+				{/snippet}
+			</Accordion.ItemContent>
+		</Accordion.Item>
+	{/each}
+</Accordion>
+```
+
+1. Implement the `element` snippet to gain access to `attributes`.
+2. Spread `attributes` to custom element, a `<div>` in this example.
+3. Add `transition:slide` and configure your preferred options.
+4. Then implement wrapping `#if` block that triggers transitions when `attribute.hidden` is toggled.
+
+### Provider Pattern
+
+Most Skeleton components also support the Provider Pattern. This utilizes a provider component that replaces root and provides access to underlying component APIs. In practice, this allows direct access to Zag.js API features, such as programmatic control for overlay components, the ability to clear input components, and more.
+
+```svelte
+<script lang="ts">
+	import { Portal, Tooltip, useTooltip } from '@skeletonlabs/skeleton-svelte';
+
+	const id = $props.id();
+	const tooltip = useTooltip({ id });
+</script>
+
+<button type="button" onclick={() => tooltip().setOpen(!tooltip().open)}>Trigger</button>
+
+<Tooltip.Provider value={tooltip}>
+	<Tooltip.Trigger>Anchor</Tooltip.Trigger>
+	<Portal>
+		<Tooltip.Positioner>
+			<Tooltip.Content>Content</Tooltip.Content>
+		</Tooltip.Positioner>
+	</Portal>
+</Tooltip.Provider>
+```
+
+> Note: Svelte requires passing `id` because `$props.id` is not available outside the component's `<script>` block.
+
+### Learn More
+
+For a comprehensive guide to how Skeleton implements components, refer to our [contribution guidelines](/docs/\[framework]/resources/contribute/components).
+
+# Core API
+
+Learn about specific features Skeleton introduces to Tailwind.
+
+The heart of Skeleton is our framework agnostic core package. This adapts and extends Tailwind to introduce our global styles, color system, typography, and more. This section details all available Skeleton-provided utility classes and theme properties.
+
+## @base
+
+Extends Tailwind's base layer with a set of opinionated global styles.
+
+<figure class="linker bg-noise">
+  <a class="btn preset-filled" href="https://github.com/skeletonlabs/skeleton/blob/main/packages/skeleton/src/base/globals.css" target="_blank">
+    View Global Styles
+  </a>
+</figure>
+
+* Sets the root color scheme to match Dark Mode settings.
+* Updates scrollbars to utilize theme colors.
+* Updates global text selection to utilize theme colors.
+* Defines the `<body>` background colors and base font styles.
+* Implements global default styles for disabled states, such as buttons.
+
+## @theme
+
+Uses Tailwind's `@theme` to implement a variety of new properties and utility classes.
+
+<figure class="linker bg-noise">
+  <a class="btn preset-filled" href="https://github.com/skeletonlabs/skeleton/blob/main/packages/skeleton/src/base/theme.css" target="_blank">
+    View Theme Properties
+  </a>
+</figure>
+
+### Colors
+
+Extends colors to include the [Skeleton color palette](/docs/\[framework]/design/colors).
+
+| Class                                 | Theme Property                       |
+| ------------------------------------- | ------------------------------------ |
+| `[property]-[color]-[shade]`          | {`--`}color-\[color]-\[shade]          |
+| `[property]-[color]-contrast-[shade]` | {`--`}color-\[color]-contrast-\[shade] |
+| `body-background-color`               | {`--`}body-background-color          |
+| `body-background-color-dark`          | {`--`}body-background-color-dark     |
+
+### Color Pairings
+
+Extends colors to implement [Color Pairing](/docs/\[framework]/design/colors#color-pairings), which balance colors between light and dark mode.
+
+| Class                                | Theme Property                      |
+| ------------------------------------ | ----------------------------------- |
+| `[property]-[color]-[shade]-[shade]` | {`--`}color-\[color]-\[shade]-\[shade] |
+
+### Spacing
+
+Integrates Tailwind's [spacing property](https://tailwindcss.com/docs/functions-and-directives#spacing-function) to modify [dynamic scaling](/docs/\[framework]/design/spacing) for various utility classes.
+
+| Class     | Theme Property |
+| --------- | -------------- |
+| (various) | {`--`}spacing  |
+
+### Typography
+
+Introduces a [typographic scale](https://designcode.io/typographic-scales) to all Tailwind [font sizes](https://tailwindcss.com/docs/font-size) using the following formula.
+
+```plaintext
+--text-{size}: calc({remSize} * var(--text-scaling));
+--text-{size}--line-height: calc(calc(1 / {remSize}) * var(--text-scaling));
+```
+
+#### Base
+
+Controls the style of global page text.
+
+| Class                  | Theme Property             |
+| ---------------------- | -------------------------- |
+| `base-font-color`      | {`--`}base-font-color      |
+| `base-font-color-dark` | {`--`}base-font-color-dark |
+| `base-font-family`     | {`--`}base-font-family     |
+| `base-font-size`       | {`--`}base-font-size       |
+| `base-line-height`     | {`--`}base-line-height     |
+| `base-font-weight`     | {`--`}base-font-weight     |
+| `base-font-style`      | {`--`}base-font-style      |
+| `base-letter-spacing`  | {`--`}base-letter-spacing  |
+
+#### Heading
+
+Controls the style of heading text.
+
+| Class                     | Theme Property                |
+| ------------------------- | ----------------------------- |
+| `heading-font-color`      | {`--`}heading-font-color      |
+| `heading-font-color-dark` | {`--`}heading-font-color-dark |
+| `heading-font-family`     | {`--`}heading-font-family     |
+| `heading-font-size`       | {`--`}heading-font-size       |
+| `heading-line-height`     | {`--`}heading-line-height     |
+| `heading-font-weight`     | {`--`}heading-font-weight     |
+| `heading-font-style`      | {`--`}heading-font-style      |
+| `heading-letter-spacing`  | {`--`}heading-letter-spacing  |
+
+#### Anchor
+
+Controls the style of anchor links.
+
+| Class                           | Theme Property                      |
+| ------------------------------- | ----------------------------------- |
+| `anchor-font-color`             | {`--`}anchor-font-color             |
+| `anchor-font-color-dark`        | {`--`}anchor-font-color-dark        |
+| `anchor-font-family`            | {`--`}anchor-font-family            |
+| `anchor-font-size`              | {`--`}anchor-font-size              |
+| `anchor-line-height`            | {`--`}anchor-line-height            |
+| `anchor-font-weight`            | {`--`}anchor-font-weight            |
+| `anchor-font-style`             | {`--`}anchor-font-style             |
+| `anchor-letter-spacing`         | {`--`}anchor-letter-spacing         |
+| `anchor-text-decoration`        | {`--`}anchor-text-decoration        |
+| `anchor-text-decoration-active` | {`--`}anchor-text-decoration-active |
+| `anchor-text-decoration-focus`  | {`--`}anchor-text-decoration-focus  |
+| `anchor-text-decoration-hover`  | {`--`}anchor-text-decoration-hover  |
+
+### Radius
+
+Extends Tailwind's radius properties with theme-specific sizes.
+
+| Class               | Theme Property         |
+| ------------------- | ---------------------- |
+| `rounded-base`      | {`--`}radius-base      |
+| `rounded-container` | {`--`}radius-container |
+
+### Edges
+
+Sets the default width for border, divide, and ring width to match the active theme properties.
+
+| Class    | Theme Property             |
+| -------- | -------------------------- |
+| `border` | {`--`}default-border-width |
+| `ring`   | {`--`}default-ring-width   |
+| `divide` | {`--`}default-divide-width |
+
+## @utility
+
+<figure class="linker bg-noise">
+  <a href="https://github.com/skeletonlabs/skeleton/blob/main/packages/skeleton/src/utilities" target="_blank" class="btn preset-filled">
+    View Utilities
+  </a>
+</figure>
+
+### Tailwind Components
+
+Allow you to style semantic HTML elements with utility classes.
+
+<NavigationGrid filter={(doc) => doc.id.includes('tailwind/')} class="md:grid-cols-2" />
+
+## @variant
+
+<figure class="linker bg-noise">
+  <a href="https://github.com/skeletonlabs/skeleton/blob/main/packages/skeleton/src/variants" target="_blank" class="btn preset-filled">
+    View Variants
+  </a>
+</figure>
+
+### Themes
+
+Enables you to target and style elements for a particular theme.
+
+```html
+<div class="bg-green-500 theme-cerberus:bg-red-500">...</div>
+<div class="bg-green-500 theme-mona:bg-red-500">...</div>
+<div class="bg-green-500 theme-vox:bg-red-500">...</div>
+```
+
+## Optional
+
+### Presets
+
+Provides a canned set of styles for use with buttons, badges, cards, and more.
+
+<figure class="linker bg-noise">
+  <a href={resolvePath(props.Astro, '/docs/[framework]/design/presets')} class="btn preset-filled">
+    Browse Presets
+  </a>
+</figure>
+
+### Preset Themes
+
+Provides a hand curated set of themes for Skeleton.
+
+<figure class="linker bg-noise">
+  <a href={resolvePath(props.Astro, '/docs/[framework]/design/themes')} class="btn preset-filled">
+    Browse Themes
+  </a>
+</figure>
+
+# Migrate from v2
+
+Learn how to migrate from Skeleton v2 to the latest release.
+
+This update represents a major overhaul to the Skeleton library. Including a ground up rewrite of every feature in the library. Note that some portions of this guide will be automated, while others require manual intervention. This is not a trivial migration from prior versions, so please ensure you follow this guide very carefully. This transition you through both of v3 and v4 updates.
+
+## Prerequisites
+
+While Skeleton v3 introduced support for multiple frameworks, we've historically only supported SvelteKit. As such, this guide is only intended for users migrating from Skeleton v2 and SvelteKit. If you you are coming from another meta-framework, this will be outside of the scope of this guide. However, this may still provide insight into the primary objectives for the overall migration process.
+
+### Create a Migration Branch
+
+We recommend you handle all migration changes on a dedicated feature branch. This ensures you can easily drop or revert changes if something goes wrong.
+
+```bash
+git checkout -b migration
+```
+
+### Prepare Your Skeleton App
+
+* Your app is running on the latest release of Skeleton v2.x
+* All critical dependencies have been updated (optional but recommended)
+* Your app is in a fully functional state before you proceed
+
+***
+
+## Migrate Core Technologies
+
+Skeleton directly utilizes a number of core technologies. These must be migrated individually before proceeding with Skeleton-specific migration. Note that Svelte and Tailwind provide dedicated CLIs to help automate this process. Please ensure you adhere to their individual migration guides linked below.
+
+### Svelte v5
+
+Migrate to the latest release of Svelte v5.
+
+<figure class="linker bg-noise">
+  <a class="btn preset-filled" href="https://svelte.dev/docs/svelte/v5-migration-guide" target="_blank" rel="noopener noreferrer">
+    Svelte v5 Migration →
+  </a>
+</figure>
+
+### SvelteKit v2
+
+Migrate to the latest release of SvelteKit v2.
+
+<figure class="linker bg-noise">
+  <a class="btn preset-filled" href="https://svelte.dev/docs/kit/migrating-to-sveltekit-2" target="_blank" rel="noopener noreferrer">
+    SvelteKit v2 Migration →
+  </a>
+</figure>
+
+### Tailwind v4
+
+Before migrating to Tailwind v4, please do the following:
+
+1. Remove `skeleton` plugin from your `tailwind.config` file.
+2. Rename your `app.{postcss|pcss}` to `app.css`. Make sure to update layout imports too.
+3. Remove `purgecss` (`vite-plugin-tailwind-purgecss`) vite plugin from your `vite.config` (if installed).
+
+Migrate to the latest release of Tailwind v4.
+
+> TIP: Having trouble running Tailwind's automated migration script due to `@apply`? Comment or remove classes temporarily, run migration CLI, then follow [these steps](/docs/\[framework]/get-started/migrate-from-v2#replacing-apply) to adapt to use native CSS properties and Tailwind's new utilities. Though ideally you should avoid the use of `@apply` going forward.
+
+<figure class="linker bg-noise">
+  <a class="btn preset-filled" href="https://tailwindcss.com/docs/upgrade-guide" target="_blank" rel="noopener noreferrer">
+    Tailwind v4 Migration →
+  </a>
+</figure>
+
+#### Migrate to Tailwind Vite Plugin
+
+Use the following steps to migrate to from PostCSS to the Vite plugin:
+
+1. Delete `postcss.config.{js|mjs}`
+2. Run `npm uninstall postcss` (if present)
+3. Run `npm uninstall @tailwindcss/postcss` (if present)
+4. Run `npm install @tailwindcss/vite`
+5. Open your `vite.config` in the root of the project
+6. Include the following import: `import tailwindcss from '@tailwindcss/vite'`
+7. Finally, add the Vite plugin <u>above</u> your framework plugin:
+
+```ts
+plugins: [
+	tailwindcss(),
+	sveltekit(), // or svelte()
+];
+```
+
+> TIP: Please ensure you've committed all pending changes before proceeding.
+
+***
+
+## Automated Migration
+
+We've provided a dedicated migration script as part of the Skeleton CLI to help automate much of this process.
+
+First, run the following to migrate for Skeleton v3 changes:
+
+```bash
+npx skeleton@latest migrate skeleton-3
+```
+
+Commit all pending changes. Then run the following to migrate for Skeleton v4 changes:
+
+```bash
+npx skeleton@latest migrate skeleton-4
+```
+
+This migration WILL handle the following...
+
+* Update all required `package.json` dependencies.
+* Implement all required Skeleton imports in your global stylesheet `app.css`.
+* Modify `data-theme` in `app.html` (if you're using a Skeleton preset theme)
+* Temporarily disable custom theme imports to allow for manual theme migration.
+* Migrate all modified Skeleton utility classes (ex: `variant-*` to `preset-*`)
+* Update all Skeleton imports throughout your entire project.
+* Some Component imports will be pruned as they are no longer supported.
+
+This migration WILL NOT...
+
+* Adjust component structure or component props. Unfortunately there's too many permutations.
+* Migrate Utility features (ex: popovers, code blocks, etc). See our recommendations below.
+
+Make sure to consult your local Git Diff (difference) to compare what has been modified before progressing forward or committing these automated changes.
+
+***
+
+## Manual Migration
+
+With automated migration complete, please follow the remaining manual migration steps. The following is not optional.
+
+### Update Stylesheet Imports
+
+> NOTE: The Skeleton CLI will handle these for you, but please confirm.
+
+In your global stylesheet (ex: `app.css`), `@source` rules for sourcing component styles have been replaced with simpler and more intuitive `@import` rules.
+
+```css
+@source '../node_modules/@skeletonlabs/skeleton-{framework}/dist'; /* [!code --] */
+@import '@skeletonlabs/skeleton-{framework}'; /* [!code ++] */
+```
+
+In Skeleton v3, canned [Preset styles](/docs/\[framework]/design/presets) were split to an optional stylesheet to allow them to be opt-in. However, due to popular demand, these have now been merged back into the core package in Skeleton v4. As such, you can remove this import.
+
+```css
+@import '@skeletonlabs/skeleton/optional/presets'; /* [!code --] */
+```
+
+### Migrate Themes
+
+#### For Preset Themes
+
+Your preset theme should be automatically migrated by the CLI. Refer to [Themes](/docs/\[framework]/design/themes#preset-themes) for more information.
+
+#### For Custom Themes
+
+1. Use the [Import feature](https://themes.skeleton.dev/themes/import) provided by the new Theme Generator.
+2. Drag and drop your v2 theme into the file upload field.
+3. Your theme will be automatically converted to the newest format.
+4. Update and modify any theme settings in the live preview.
+5. Make sure to set a valid theme name in the right-hand panel.
+6. Tap to "Code" tab to preview your generated theme code.
+7. Copy the theme code, then following our [custom theme instructions](/docs/\[framework]/design/themes#custom-themes).
+8. Similar to preset themes, you will need to both register and set an active theme.
+
+### Replace AppShell with Custom Layouts
+
+Skeleton has now sunset ([troublesome](https://github.com/skeletonlabs/skeleton/issues/2383)) `<AppShell>` component in favor of user-defined custom layouts. We've provided a dedicated [Layouts](/docs/\[framework]/guides/layouts) guide for replicating common layout structures using only semantic HTML and Tailwind - no Skeleton specific features are required.
+
+### Migrating Components
+
+Components have undergone a major overhaul starting in Skeleton v3, with further refinements in Skeleton v4. Given the sheer number of changes, we recommend you compare each component to it's current production documentation.
+
+#### Key Changes in v3
+
+* Changes to adopt to new [Svelte 5 APIs](https://svelte.dev/docs/svelte/v5-migration-guide) like runes, snippets, event handlers, etc.
+* Changes to support [Zag.js](https://zagjs.com/), which serves as a foundation of our cross-framework components.
+* Changes to import path: `@skeletonlabs/skeleton-svelte`.
+* Changes to component name and/or structure (including sub-components)
+* Changes based on newly introduces features and properties.
+
+#### Key Changes in v4
+
+* Changes to adopt to newest [component conventions](/docs/\[framework]/resources/contribute/components).
+* Changes to introduce new [component patterns](/docs/\[framework]/get-started/fundamentals#functional-components).
+
+#### How to Migrate Components
+
+The following showcases the process of migrating a single component.
+
+**Was (v2)**
+
+```svelte
+<Avatar src="https://i.pravatar.cc/150?img=48" />
+```
+
+**Now (v4)**
+
+```svelte
+<Avatar>
+	<Avatar.Image src="https://i.pravatar.cc/150?img=48" alt="Jane Doe" />
+	<Avatar.Fallback>SK</Avatar.Fallback>
+</Avatar>
+```
+
+This was handled as follows:
+
+1. We consulted to documentation for the [Avatar component](/docs/\[framework]/framework-components/avatar)
+2. The Skeleton migration CLI will have handled all component imports automatically.
+3. The root component `<Avatar>` remains; remove `src` and other unsupported props.
+4. Now implements the new `<Avatar.Image>` child and pass to `src` path and `alt` text.
+5. Now implements the new `<Avatar.Fallback>` child and pass a fallback value, icon, image, etc.
+
+#### Tips for Component Migration
+
+Until all components are migrated to the new format, they will throw errors when trying to run your local development server. Use the following technique to update in a more progressive manner.
+
+1. Use your editor of choice to search for Skeleton components via import path (`@skeletonlabs/skeleton-svelte`)
+2. Comment out each component one-by-one until all are disabled.
+3. Consider adding messages such as `<p>(avatar)</p>` as visible placeholders for components on each page.
+4. Uncomment each component individually as you migrate forward to the new syntax.
+5. Once all components are migrated, you should no longer receive errors when running the dev server.
+
+#### Renamed Components in v3
+
+As part of Skeleton v3 update, several components were renamed to be more semantic.
+
+| Name               | v2                                                          | v3                                                               | Notes                                                     |
+| ------------------ | ----------------------------------------------------------- | ---------------------------------------------------------------- | --------------------------------------------------------- |
+| `<AppRail>`        | [Link](https://v2.skeleton.dev/components/app-rail)         | [Link](https:/skeleton.dev/docs/components/navigation/svelte)    | Renamed `<Navigation>` - greatly expanded features        |
+| `<FileButton>`     | [Link](https://v2.skeleton.dev/components/file-buttons)     | [Link](https:/skeleton.dev/docs/components/file-upload/svelte)   | Renamed `<FileUpload>` - merges `<FileDropzone>` features |
+| `<FileDropzone>`   | [Link](https://v2.skeleton.dev/components/file-buttons)     | [Link](https:/skeleton.dev/docs/components/file-upload/svelte)   | Renamed `<FileUpload>` - merges `<FileButton>` features   |
+| `<InputChip>`      | [Link](https://v2.skeleton.dev/components/input-chips)      | [Link](https:/skeleton.dev/docs/components/tags-input/svelte)    | Renamed `<TagsInput>`                                     |
+| `<Paginator>`      | [Link](https://v2.skeleton.dev/components/paginators)       | [Link](https:/skeleton.dev/docs/components/pagination/svelte)    | Renamed `<Pagination>`                                    |
+| `<ProgressBar>`    | [Link](https://v2.skeleton.dev/components/progress-bars)    | [Link](https:/skeleton.dev/docs/components/progress/svelte)      | Renamed `<Progress>`                                      |
+| `<ProgressRadial>` | [Link](https://v2.skeleton.dev/components/progress-radials) | [Link](https:/skeleton.dev/docs/components/progress-ring/svelte) | Renamed `<ProgressRing>`                                  |
+| `<RadioGroup>`     | [Link](https://v2.skeleton.dev/components/radio-groups)     | [Link](https:/skeleton.dev/docs/components/segment/svelte)       | Renamed `<SegmentedControl>`                              |
+| `<RangeSlider>`    | [Link](https://v2.skeleton.dev/components/range-sliders)    | [Link](https:/skeleton.dev/docs/components/slider/svelte)        | Renamed `<Slider>`                                        |
+| `<Slider>`         | [Link](https://v2.skeleton.dev/components/slide-toggles)    | [Link](https:/skeleton.dev/docs/components/switch/svelte)        | Renamed `<Switch>`                                        |
+| `<TabGroup>`       | [Link](https://v2.skeleton.dev/components/tabs)             | [Link](https:/skeleton.dev/docs/components/tabs/svelte)          | Renamed `<Tabs>`                                          |
+
+#### Renamed Components in v4
+
+Then again in Skeleton v4, select components were renamed to follow the [Zag.js](https://zagjs.com/) naming conventions. This will serve as baselines going foward.
+
+| v3                  | v4                           | v4 Docs                                                          |
+| ------------------- | ---------------------------- | ---------------------------------------------------------------- |
+| `<Modal>`           | `<Dialog>`                   | [View](/docs/\[framework]/framework-components/dialog)            |
+| `<Navigation.Bar>`  | `<Navigation layout="bar">`  | [View](/docs/\[framework]/framework-components/navigation)        |
+| `<Navigation.Rail>` | `<Navigation layout="rail">` | [View](/docs/\[framework]/framework-components/navigation)        |
+| `<ProgressRing>`    | `<Progress>`                 | [View](/docs/\[framework]/framework-components/progress-circular) |
+| `<Ratings>`         | `<RatingGroup>`              | [View](/docs/\[framework]/framework-components/rating-group)      |
+| `<Segment>`         | `<SegmentedControl>`         | [View](/docs/\[framework]/framework-components/segmented-control) |
+| `<Toaster>`         | `<Toast.Group>`              | [View](/docs/\[framework]/framework-components/toast)             |
+
+### Tailwind v4 Changes
+
+Tailwind v4 represents a major update for Tailwind. We've detailed to most notable features as they may relate to your Skeleton project. Please consult to [Tailwind v4 announcement](https://tailwindcss.com/blog/tailwindcss-v4) post for the full roster of changes.
+
+* The `tailwing.config` has been removed in favor of [CSS-based configuration](https://tailwindcss.com/blog/tailwindcss-v4#css-first-configuration).
+* New strategies are available to support [Dark Mode](/docs/\[framework]/guides/mode).
+* The [Tailwind Forms Plugin](/docs/\[framework]/tailwind-components/forms#prerequisites) is still required for form elements.
+* The Skeleton `data-theme` attribute has moved from `<body>` to `<html>`.
+* Themes colors are now [oklch format](https://evilmartians.com/chronicles/oklch-in-css-why-quit-rgb-hsl), but optionally support any format.
+
+### Replacing @apply
+
+We strongly encourage you take this opportunity to move away from any usage of `@apply`. Tailwind has long since advocated against its use, and the latest release of introduces new directives and functions that make this much easier to avoid. Below a trivial example:
+
+```css
+/* Before */
+
+.foo {
+	@apply bg-surface-50-950 text-surface-950 dark:text-surface-50 p-4;
+}
+```
+
+```css
+/* After */
+
+.foo {
+	background-color: var(--color-surface-50-950);
+	color: var(--color-surface-950);
+	padding: --spacing(4);
+	@variant dark {
+		color: var(--color-surface-50);
+	}
+}
+```
+
+* Refer to the Skeleton [Core API](/docs/\[framework]/get-started/core-api) documentation for a full list of Skeleton's CSS custom properties.
+* Refer to Tailwind's [functions and directives](https://tailwindcss.com/docs/functions-and-directives) for more information on these new features.
+
+### Replace Unsupported Features
+
+Skeleton v3 represented a point of reflection on what features should remain as part of the core experience. As such, we identified a number of features that fall outside of this scope. Don't fret though, we've gone out of our way to detail each feature and provide the best alternative available.
+
+#### Svelte Actions
+
+| Name       | v2                                                 | Alternative                                            | Notes                              |
+| ---------- | -------------------------------------------------- | ------------------------------------------------------ | ---------------------------------- |
+| Clipboard  | [Link](https://v2.skeleton.dev/actions/clipboard)  | [Link](/docs/\[framework]/guides/cookbook/clipboard)    | Provided via Cookbook guide        |
+| SVG Filter | [Link](https://v2.skeleton.dev/actions/filters)    | [Link](/docs/\[framework]/guides/cookbook/svg-filters)  | Provided via Cookbook guide        |
+| Focus Trap | [Link](https://v2.skeleton.dev/actions/focus-trap) | [Link](/docs/\[framework]/framework-components/popover) | Automatic to each modal component. |
+
+> TIP: We also recommend [Runed](https://runed.dev/docs) for a similar approach to small composable features for Svelte 5.
+
+#### Components
+
+| Name              | v2                                                              | Alternative                                                                    | Notes                                    |
+| ----------------- | --------------------------------------------------------------- | ------------------------------------------------------------------------------ | ---------------------------------------- |
+| `<AppShell>`      | [Link](https://v2.skeleton.dev/components/app-shell)            | [Link](/docs/\[framework]/guides/layouts)                                       | Replaced with custom layouts             |
+| `<Autocomplete>`  | [Link](https://v2.skeleton.dev/components/autocomplete)         | [Link](/docs/\[framework]/framework-components/combobox)                        | Replaced with Combobox                   |
+| `<ConicGradient>` | [Link](https://v2.skeleton.dev/components/conic-gradients)      | [Link](https://tailwindcss.com/docs/background-image#adding-a-radial-gradient) | Now built into Tailwind                  |
+| `<Lightswitch>`   | [Link](https://v2.skeleton.dev/docs/dark-mode#custom-component) | [Link](/docs/\[framework]/guides/mode#light-switch)                             | Provided via Cookbook guide              |
+| `<Stepper>`       | [Link](https://v2.skeleton.dev/components/steppers)             | [Link](/docs/\[framework]/guides/cookbook/stepper)                              | Provided via Cookbook guide              |
+| `<Table>`         | [Link](https://v2.skeleton.dev/components/tables)               | [Link](/docs/\[framework]/tailwind-components/tables)                           | Removed in favor of a Tailwind component |
+
+#### Utilities
+
+| Name              | v2                                                             | Alternative                                                  | Notes                            |
+| ----------------- | -------------------------------------------------------------- | ------------------------------------------------------------ | -------------------------------- |
+| Code Blocks       | [Link](https://v2.skeleton.dev/utilities/codeblocks)           | [Link](/docs/\[framework]/integrations/code-block)            | Provided via Integration guide   |
+| Drawers           | [Link](https://v2.skeleton.dev/utilities/drawers)              | [Link](/docs/\[framework]/framework-components/dialog#drawer) | Replaced with new component      |
+| Modals            | [Link](https://v2.skeleton.dev/utilities/modals)               | [Link](/docs/\[framework]/framework-components/dialog)        | Replaced with new component      |
+| Popups            | [Link](https://v2.skeleton.dev/utilities/popups)               | [Link](/docs/\[framework]/framework-components/popover)       | Replaced with new component      |
+| Toasts            | [Link](https://v2.skeleton.dev/utilities/toasts)               | [Link](/docs/\[framework]/framework-components/toast)         | Replaced with new component      |
+| Table of Contents | [Link](https://v2.skeleton.dev/utilities/table-of-contents)    | [Link](/docs/\[framework]/guides/cookbook/table-of-contents)  | Provided via Cookbook guide      |
+| Persisted Store   | [Link](https://v2.skeleton.dev/utilities/local-storage-stores) | --                                                           | Incompatible with Svelte 5 Runes |
+
+### Migrate Input Groups
+
+Although the automated migration script will handle the majority of class updates, Input Groups are the exception and must be migrated manually. [Refer to the documentation](/docs/\[framework]/tailwind-components/forms#groups) for updated examples.
+
+| Old Class             | New Class   |
+| --------------------- | ----------- |
+| `input-group-shim`    | `ig-cell`   |
+| `input-group > input` | `ig-input`  |
+| `input-group-divider` | (removed)   |
+| `input`               | `ig-input`  |
+| `select`              | `ig-select` |
+| `button`              | `ig-button` |
+
+### Migration Complete
+
+If you've completed all steps above in full, your application should once again be in a functional state. Run your application's local dev server to confirm. Then remember to merge all changes into your primary branch.
+
+```bash
+npm run dev
+```
+
+***
+
+## Support and Feedback
+
+If you have any questions or issues about the migration process, please contact us on [Discord](https://discord.gg/EXqV7W8MtY) (the `#contributors` channel) or via [GitHub](https://github.com/skeletonlabs/skeleton/discussions). We are here to help!
+
+# Migrate from v3
+
+Learn how to migrate from Skeleton v3 to the latest release.
+
+Skeleton v4 introduces a top-to-bottom overhaul of component APIs. The goal has been to stabilized internal and external APIs of our component system and ensure we can continue to introduce new components and new component frameworks over time. It also aims to make Skeleton's components as simple and intuitive to use as possible for new users.
+
+## Prerequisites
+
+We recommend you handle all migration changes on a dedicated feature branch. This ensures you can easily drop or revert if anything goes wrong.
+
+```bash
+git checkout -b migration
+```
+
+Make sure you've accounted for the following:
+
+* Ensure both Skeleton packages (core and framework) are updated to the latest v3.x release.
+* Update all critical dependencies in your app to their latest version (optional but recommended)
+* Make sure your app has been tested and is in a functional state.
+
+***
+
+## Automated Migration
+
+To begin, we will run a quick automated migration.
+
+```bash
+npx skeleton@latest migrate skeleton-4
+```
+
+This will handle package and stylesheet updates in the next couple steps. If you opt for the CLI, feel free to skip down to [Manual Migration](/docs/\[framework]/get-started/migrate-from-v3#manual-migration) steps below. Note that manual steps are required for all migrations.
+
+### Update NPM Packages
+
+For Release Candidate, please update each Skeleton package to the early access `@next` version. Note that we will be updating these packages frequently leading up to the full release.
+
+**React**
+
+```bash
+npm install @skeletonlabs/skeleton@latest @skeletonlabs/skeleton-react@latest
+```
+
+**Svelte**
+
+```bash
+npm install @skeletonlabs/skeleton@latest @skeletonlabs/skeleton-svelte@latest
+```
+
+### Update Stylesheet Imports
+
+The following migration steps apply to your global stylesheet (ex: `app.css`).
+
+The `@source` rules for sourcing component styles have been replaced with simpler and more intuitive `@import` rules.
+
+```css
+@source '../node_modules/@skeletonlabs/skeleton-{framework}/dist'; /* [!code --] */
+@import '@skeletonlabs/skeleton-{framework}'; /* [!code ++] */
+```
+
+In Skeleton v3, [Preset styles](/docs/\[framework]/design/presets) were split to an optional stylesheet to allow them to be opt-in. However, due to popular demand, these have now been merged back into the core package. If this optional import is present, please remove it:
+
+```css
+@import '@skeletonlabs/skeleton/optional/presets'; /* [!code --] */
+```
+
+***
+
+## Manual Migration
+
+Assuming all above steps have been completed in full, you will now be required to handle the manual portion of the migration. The steps below are not optional and must be completed to finalize your migration to Skeleton v4.
+
+### Migrating Components
+
+Below is an example of that process specifically tailored for the Avatar component.
+
+**Was (v3)**
+
+```svelte
+<Avatar src="https://i.pravatar.cc/150?img=48" name="Jane Doe" />
+```
+
+**Now (v4)**
+
+```svelte
+<Avatar>
+	<Avatar.Image src="https://i.pravatar.cc/150?img=48" alt="Jane Doe" />
+	<Avatar.Fallback>SK</Avatar.Fallback>
+</Avatar>
+```
+
+1. Consult to the documentation for the [Avatar component](/docs/\[framework]/framework-components/avatar)
+2. Keep the import as is; no changes are required for this component.
+3. The root component `<Avatar>` remains; remove `src`, `alt`, and or `name` props.
+4. Implement the new `<Avatar.Image>` child and pass to `src` path and `alt` text.
+5. Initials are no longer generated via `name`; instead specify a fallback with `<Avatar.Fallback>`
+
+Until your components are migrated to the new syntax and APIs they will cause errors when trying to run your local development server. As such, we recommend using the following technique to handle this in a progressive manner:
+
+1. Use your editor of choice to search for Skeleton components via import path (`@skeletonlabs/skeleton`)
+2. Comment out each component one-by-one until all are disabled.
+3. Consider adding messages such as `<p>(avatar)</p>` as visible placeholders for components on each page.
+4. Uncomment each component individually as you migrate it forward to the new syntax.
+5. Once all components are migrated, you should no longer receive errors when running the dev server.
+
+### Rename Components
+
+As part of this update, select components have been renamed. We now aim to follow the [Zag.js](https://zagjs.com/) naming conventions.
+
+| Was (v3)            | Now (v4)                     | v4 Docs                                                          |
+| ------------------- | ---------------------------- | ---------------------------------------------------------------- |
+| `<Modal>`           | `<Dialog>`                   | [View](/docs/\[framework]/framework-components/dialog)            |
+| `<Navigation.Bar>`  | `<Navigation layout="bar">`  | [View](/docs/\[framework]/framework-components/navigation)        |
+| `<Navigation.Rail>` | `<Navigation layout="rail">` | [View](/docs/\[framework]/framework-components/navigation)        |
+| `<ProgressRing>`    | `<Progress>`                 | [View](/docs/\[framework]/framework-components/progress-circular) |
+| `<Ratings>`         | `<RatingGroup>`              | [View](/docs/\[framework]/framework-components/rating-group)      |
+| `<Segment>`         | `<SegmentedControl>`         | [View](/docs/\[framework]/framework-components/segmented-control) |
+| `<Toaster>`         | `<Toast.Group>`              | [View](/docs/\[framework]/framework-components/toast)             |
+
+***
+
+## Support and Feedback
+
+If you have any questions or issues about the migration process, please contact us on [Discord](https://discord.gg/EXqV7W8MtY) (the `#contributors` channel) or via [GitHub](https://github.com/skeletonlabs/skeleton/discussions). We are here to help!
+
+## Guides
+
+# Dark Mode
+
+Learn how to use Tailwind's dark mode feature for your Skeleton project.
+
+Skeleton makes use of Tailwind's Dark Mode to enable multiple strategies to control the overall app or page mode, as well as Color Scheme to selectively toggle light or dark interfaces at any scope.
+
+## Dark Mode
+
+Tailwind [multiple strategies](https://tailwindcss.com/docs/dark-mode) for configuring Dark Mode.
+
+### Media Strategy
+
+Enable by default. Uses CSS's [prefers-color-scheme](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme) and sets the active mode based on operating system settings.
+
+### Selector Strategy
+
+Activates dark mode by adding or removing the `.dark` class to your application's `<html>` element.
+
+```css
+@custom-variant dark (&:where(.dark, .dark *));
+```
+
+```html
+<html class="dark">
+	<!-- ... -->
+</html>
+```
+
+### Data Attribute Strategy
+
+Uses a data attribute instead of a class to activate dark mode.
+
+```css
+@custom-variant dark (&:where([data-mode=dark], [data-mode=dark] *));
+```
+
+```html
+<html data-mode="dark">
+	<!-- ... -->
+</html>
+```
+
+### Using the Dark Variant
+
+Apply a base style, then with Tailwind's `dark:` variant.
+
+```html
+<!-- Light Mode: White | Dark Mode: Black -->
+<div class="bg-white dark:bg-black">...</div>
+```
+
+***
+
+## Color Scheme
