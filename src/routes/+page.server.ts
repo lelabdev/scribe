@@ -3,6 +3,7 @@ import { env } from '$env/dynamic/private';
 import { uploadFile } from '$lib/supabase-storage';
 import { db } from '$lib/db';
 import { documents } from '$lib/db/schema';
+import { normalizeOCRResponse, parseMistralResponse, extractMindeeData } from '$lib/ocr-utils';
 
 export const actions = {
 	uploadFile: async ({ request }: { request: Request }) => {
@@ -93,7 +94,7 @@ async function processWithMindee(imageUrl: string) {
 	const response = await fetch('https://api.mindee.net/v1/products/mindee/invoices/v4/prediction', {
 		method: 'POST',
 		headers: {
-			'Authorization': `Token ${mindeeApiKey}`
+			Authorization: `Token ${mindeeApiKey}`
 		},
 		body: formData
 	});
@@ -102,16 +103,13 @@ async function processWithMindee(imageUrl: string) {
 		throw new Error('Mindee API error');
 	}
 
-	const result = await response.json();
-
-	const document = (result as Record<string, unknown>).document as Record<string, unknown> | undefined;
-	const inference = document?.inference as Record<string, unknown> | undefined;
-	const prediction = inference?.prediction as Record<string, unknown> | undefined;
+	const result = (await response.json()) as Record<string, unknown>;
+	const prediction = extractMindeeData(result);
 
 	return normalizeOCRResponse({
 		provider: 'mindee',
 		type: 'facture',
-		data: prediction || {},
+		data: prediction,
 		raw_text: (prediction?.locale as string) || ''
 	});
 }
@@ -123,7 +121,7 @@ async function processWithMistral(imageUrl: string) {
 		method: 'POST',
 		headers: {
 			'Content-Type': 'application/json',
-			'Authorization': `Bearer ${mistralApiKey}`
+			Authorization: `Bearer ${mistralApiKey}`
 		},
 		body: JSON.stringify({
 			model: 'pixtral-12b-2409',
@@ -149,34 +147,18 @@ async function processWithMistral(imageUrl: string) {
 		throw new Error('Mistral API error');
 	}
 
-	const result = await response.json() as Record<string, unknown>;
+	const result = (await response.json()) as Record<string, unknown>;
 	const choices = result.choices as Array<Record<string, unknown>> | undefined;
 	const firstChoice = choices?.[0] as Record<string, unknown> | undefined;
 	const message = firstChoice?.message as Record<string, unknown> | undefined;
 	const content = (message?.content as string) || '{}';
 
-	let parsedData;
-	try {
-		const cleanContent = content.replace(/```json\n?|\n?```/g, '').trim();
-		parsedData = JSON.parse(cleanContent);
-	} catch {
-		console.error('JSON parse error:', content);
-		parsedData = { titre: 'Erreur parsing', ingredients: [], instructions: '', type_document: 'autre' };
-	}
+	const parsedData = parseMistralResponse(content);
 
 	return normalizeOCRResponse({
 		provider: 'mistral',
-		type: (parsedData as Record<string, unknown>).type_document as string || 'recette',
+		type: ((parsedData as Record<string, unknown>).type_document as string) || 'recette',
 		data: parsedData,
 		raw_text: content
 	});
-}
-
-function normalizeOCRResponse(response: {
-	provider: string;
-	type: string;
-	data: Record<string, unknown>;
-	raw_text: string;
-}) {
-	return response;
 }

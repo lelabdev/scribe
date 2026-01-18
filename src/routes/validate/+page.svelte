@@ -1,6 +1,4 @@
 <script lang="ts">
-	import { goto } from '$app/navigation';
-
 	let imageUrl = $state('');
 	let filePath = $state('');
 	let ocrData = $state<Record<string, unknown>>({});
@@ -8,18 +6,22 @@
 	let formType = $state('facture');
 	let metadata = $state<Record<string, unknown>>({});
 	let fullText = $state('');
+	let saving = $state(false);
+	let error = $state<string | null>(null);
 
 	$effect(() => {
 		const state = history.state;
 		imageUrl = state?.imageUrl || '';
 		filePath = state?.filePath || '';
 		ocrData = state?.ocrData || {};
-		metadata = ocrData.data as Record<string, unknown> || {};
+		metadata = (ocrData.data as Record<string, unknown>) || {};
 		fullText = (ocrData.raw_text as string) || '';
 	});
 
-	function handleSave(event: Event) {
+	async function handleSave(event: Event) {
 		event.preventDefault();
+		error = null;
+		saving = true;
 
 		const formData = new FormData();
 		formData.append('filePath', filePath);
@@ -28,40 +30,51 @@
 		formData.append('metadata', JSON.stringify(metadata));
 		formData.append('fullText', fullText);
 
-		fetch('/?/saveDocument', {
-			method: 'POST',
-			body: formData
-		}).then((response) => {
-			if (response.ok) {
-				// eslint-disable-next-line svelte/no-navigation-without-resolve
-				goto('/');
+		try {
+			const response = await fetch('/validate/?/saveDocument', {
+				method: 'POST',
+				body: formData
+			});
+
+			const result = (await response.json()) as Record<string, unknown>;
+
+			if (result.success) {
+				window.location.href = '/';
+			} else {
+				saving = false;
+				error = (result.error as string) || 'Erreur lors de la sauvegarde';
 			}
-		});
+		} catch (err) {
+			console.error('Save error:', err);
+			saving = false;
+			error = 'Erreur de connexion. Veuillez réessayer.';
+		}
 	}
 </script>
 
 <div class="min-h-screen bg-gray-100 p-4">
-	<div class="max-w-7xl mx-auto">
-		<h1 class="text-3xl font-bold mb-8">Valider le document</h1>
+	<div class="mx-auto max-w-7xl">
+		<h1 class="mb-8 text-3xl font-bold">Valider le document</h1>
 
-		<div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
-			<div class="bg-white rounded-lg shadow-md p-4 sticky top-4 h-fit">
+		<div class="grid grid-cols-1 gap-6 lg:grid-cols-2">
+			<div class="sticky top-4 h-fit rounded-lg bg-white p-4 shadow-md">
 				{#if imageUrl}
 					<img src={imageUrl} alt="Document scanné" class="w-full rounded-lg" />
 				{:else}
-					<div class="aspect-video bg-gray-200 rounded-lg flex items-center justify-center">
+					<div class="flex aspect-video items-center justify-center rounded-lg bg-gray-200">
 						<p class="text-gray-500">Aucune image</p>
 					</div>
 				{/if}
 			</div>
 
-			<div class="bg-white rounded-lg shadow-md p-6 overflow-auto">
+			<div class="overflow-auto rounded-lg bg-white p-6 shadow-md">
 				<form onsubmit={handleSave}>
 					<div class="mb-6">
-						<label class="block text-sm font-medium mb-2">Type de document</label>
+						<label for="docType" class="mb-2 block text-sm font-medium">Type de document</label>
 						<select
+							id="docType"
 							bind:value={formType}
-							class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+							class="w-full rounded-lg border border-gray-300 px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:outline-none"
 						>
 							<option value="facture">Facture</option>
 							<option value="cni">CNI</option>
@@ -72,66 +85,87 @@
 
 					{#if formType === 'facture' || formType === 'cni'}
 						<div class="mb-4">
-							<label class="block text-sm font-medium mb-2">Montant</label>
+							<label for="amount" class="mb-2 block text-sm font-medium">Montant</label>
 							<input
+								id="amount"
 								type="text"
 								bind:value={metadata.amount}
-								class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+								class="w-full rounded-lg border border-gray-300 px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:outline-none"
 							/>
 						</div>
 
 						<div class="mb-4">
-							<label class="block text-sm font-medium mb-2">Date</label>
+							<label for="date" class="mb-2 block text-sm font-medium">Date</label>
 							<input
+								id="date"
 								type="text"
 								bind:value={metadata.date}
-								class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+								class="w-full rounded-lg border border-gray-300 px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:outline-none"
 							/>
 						</div>
 					{/if}
 
 					{#if formType === 'recette'}
 						<div class="mb-4">
-							<label class="block text-sm font-medium mb-2">Titre</label>
+							<label for="titre" class="mb-2 block text-sm font-medium">Titre</label>
 							<input
+								id="titre"
 								type="text"
 								bind:value={metadata.titre}
-								class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+								class="w-full rounded-lg border border-gray-300 px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:outline-none"
 							/>
 						</div>
 
 						<div class="mb-4">
-							<label class="block text-sm font-medium mb-2">Temps de préparation</label>
+							<label for="temps" class="mb-2 block text-sm font-medium">Temps de préparation</label>
 							<input
+								id="temps"
 								type="text"
 								bind:value={metadata.temps_preparation}
-								class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+								class="w-full rounded-lg border border-gray-300 px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:outline-none"
 							/>
 						</div>
 
 						<div class="mb-4">
-							<label class="block text-sm font-medium mb-2">Ingrédients</label>
+							<label for="ingredients" class="mb-2 block text-sm font-medium">Ingrédients</label>
 							<textarea
+								id="ingredients"
 								bind:value={metadata.ingredients}
-								class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 h-32"
+								class="h-32 w-full rounded-lg border border-gray-300 px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:outline-none"
 							></textarea>
 						</div>
 					{/if}
 
 					<div class="mb-6">
-						<label class="block text-sm font-medium mb-2">Texte complet</label>
+						<label for="fullText" class="mb-2 block text-sm font-medium">Texte complet</label>
 						<textarea
+							id="fullText"
 							bind:value={fullText}
-							class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 h-64"
+							class="h-64 w-full rounded-lg border border-gray-300 px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:outline-none"
 							placeholder="Texte complet du document..."
 						></textarea>
 					</div>
 
+					{#if error}
+						<div class="mb-4 rounded-lg bg-red-100 p-4 text-red-800" role="alert">
+							<p class="font-semibold">Erreur</p>
+							<p>{error}</p>
+						</div>
+					{/if}
+
 					<button
 						type="submit"
-						class="w-full bg-blue-500 text-white py-3 px-6 rounded-lg font-medium hover:bg-blue-600 transition-colors"
+						disabled={saving}
+						class="flex w-full items-center justify-center gap-2 rounded-lg bg-blue-500 px-6 py-3 font-medium text-white transition-colors hover:bg-blue-600 disabled:cursor-not-allowed disabled:opacity-50"
 					>
-						Valider et Enregistrer
+						{#if saving}
+							<div
+								class="h-5 w-5 animate-spin rounded-full border-2 border-white border-t-transparent"
+							></div>
+							Sauvegarde en cours...
+						{:else}
+							Valider et Enregistrer
+						{/if}
 					</button>
 				</form>
 			</div>
