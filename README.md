@@ -77,15 +77,21 @@ bun run format
 ```
 src/
 ├── routes/              # SvelteKit pages
-│   ├── +page.svelte       # Upload interface
+│   ├── +page.svelte       # Upload interface with mobile-first design
 │   ├── +page.server.ts    # Server actions (upload, OCR, save)
-│   └── validate/         # Validation page
+│   ├── validate/         # Validation page
+│   │   ├── +page.svelte      # Two-column review interface
+│   │   └── +page.server.ts   # Save document action
 ├── lib/
 │   ├── db/
 │   │   ├── schema.ts       # Database schema (SQLite)
 │   │   └── index.ts       # Drizzle client
 │   ├── supabase-storage.ts # Local file storage
-│   └── ocr/             # OCR processing (Mindee, Mistral)
+│   ├── ocr-utils.ts      # OCR utility functions (normalize, parse, extract)
+│   └── ocr-utils.spec.ts # Unit tests for OCR utilities
+e2e/                   # E2E tests with Playwright
+├── migrations/            # Database migrations
+└── ai/                  # AI context and documentation
 ```
 
 ## How It Works
