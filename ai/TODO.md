@@ -72,7 +72,7 @@
 - [x] Revoir le design (mobile-first, Skeleton UI, Tailwind)
 - [x] Optimiser l'expérience utilisateur (états de chargement, erreurs)
 - [x] Documentation technique
-- [ ] Nettoyage du code
+- [x] Nettoyage du code
 - [x] Lint et typecheck passants : `bun run lint && bun run check` (typecheck OK, lint OK - tous les problèmes résolus)
 
 ---

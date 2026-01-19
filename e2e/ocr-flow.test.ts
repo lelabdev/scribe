@@ -4,15 +4,15 @@ test.describe('OCR Flow', () => {
 	test('should display OCR scanner interface', async ({ page }) => {
 		await page.goto('/');
 		await expect(page.locator('h1')).toContainText('OCR Scanner');
-		await expect(page.getByText('Doc Officiel')).toBeVisible();
-		await expect(page.getByText('Recette / Note')).toBeVisible();
+		await expect(page.getByText('Official Doc')).toBeVisible();
+		await expect(page.getByText('Recipe / Note')).toBeVisible();
 	});
 
 	test('should toggle between document categories', async ({ page }) => {
 		await page.goto('/');
 
-		const officialButton = page.getByRole('button', { name: 'Doc Officiel' });
-		const creativeButton = page.getByRole('button', { name: 'Recette / Note' });
+		const officialButton = page.getByRole('button', { name: 'Official Doc' });
+		const creativeButton = page.getByRole('button', { name: 'Recipe / Note' });
 
 		await expect(officialButton).toBeVisible();
 		await expect(creativeButton).toBeVisible();
@@ -26,8 +26,8 @@ test.describe('OCR Flow', () => {
 
 	test('should show upload interface', async ({ page }) => {
 		await page.goto('/');
-		await expect(page.getByText('Cliquez ou glissez une image')).toBeVisible();
-		await expect(page.getByText('Formats acceptés : JPG, PNG')).toBeVisible();
-		await expect(page.getByText('Scanner le document')).toBeVisible();
+		await expect(page.getByText('Click or drag an image')).toBeVisible();
+		await expect(page.getByText('Accepted formats: JPG, PNG')).toBeVisible();
+		await expect(page.getByText('Scan Document')).toBeVisible();
 	});
 });
