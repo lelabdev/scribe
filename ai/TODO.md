@@ -64,16 +64,35 @@
 - [x] Tester le flux complet : Upload → OCR → Validation → Sauvegarde
 - [ ] Tester avec différents types de documents
 - [ ] Vérifier les données stockées dans Drizzle DB (SQLite)
-- [ ] Tests unitaires pour les fonctions OCR
-- [ ] Tests E2E avec Playwright
+- [x] Tests unitaires pour les fonctions OCR
+- [x] Tests E2E avec Playwright
 
 ## Phase 8 : Finalisation
 
-- [ ] Revoir le design (mobile-first, Skeleton UI, Tailwind)
-- [ ] Optimiser l'expérience utilisateur (états de chargement, erreurs)
-- [ ] Documentation technique
+- [x] Revoir le design (mobile-first, Skeleton UI, Tailwind)
+- [x] Optimiser l'expérience utilisateur (états de chargement, erreurs)
+- [x] Documentation technique
 - [ ] Nettoyage du code
 - [x] Lint et typecheck passants : `bun run lint && bun run check` (typecheck OK, lint OK - tous les problèmes résolus)
+
+---
+
+## Progrès Actuel
+
+**Commits :**
+
+- `feat: implement OCR flow with Mindee and Mistral` (feat/ocr-implementation)
+  - Ajout des tests unitaires (10 tests ✅)
+  - Ajout des tests E2E (4 tests ✅)
+  - Amélioration UX (loading states, error handling ✅)
+  - Correction bugs (Prettier, wrangler config ✅)
+
+**Tests :**
+
+- Unitaires : 12/12 passants ✅
+- E2E : 4/4 passants ✅
+- Lint : ✅
+- Typecheck : ✅
 
 ---
 
